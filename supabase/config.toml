@@ -1,0 +1,4 @@
+project_id = "onzdhetipxluyocqsaqi"
+
+[functions.pharma-explain]
+verify_jwt = false
