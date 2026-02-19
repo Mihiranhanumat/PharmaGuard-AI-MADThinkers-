@@ -10,7 +10,7 @@ Here is your **clean, professional, ready-to-paste README file content** (balanc
 
 ## 🚀 Live Demo
 
-🔗 [pharma-guard-ai-mad-thinkers.vercel.app](pharma-guard-ai-mad-thinkers.vercel.app)
+🔗 [https://pharma-guard-ai-mad-thinkers.vercel.app](https://pharma-guard-ai-mad-thinkers.vercel.app)
 
 ---
 
