@@ -1,3 +1,56 @@
+
+// ===== PHENOTYPE INFERENCE =====
+
+type Phenotype = "PM" | "IM" | "NM" | "RM" | "URM" | "Unknown";
+
+function scoreDiplotype(
+  diplotype: string,
+  table: Record<string, number>
+): number | null {
+  try {
+    const [a, b] = diplotype.split("/");
+    return (table[a] ?? 0.5) + (table[b] ?? 0.5);
+  } catch {
+    return null;
+  }
+}
+
+function phenotypeFromScore(score: number | null): Phenotype {
+  if (score === null) return "Unknown";
+  if (score === 0) return "PM";
+  if (score <= 1) return "IM";
+  if (score === 2) return "NM";
+  if (score > 2) return "URM";
+  return "Unknown";
+}
+
+/* ===== GENE MODELS ===== */
+
+const CYP2D6 = { "*1": 1, "*2": 1, "*4": 0, "*5": 0, "*10": 0.25, "*41": 0.5 };
+const CYP2C9 = { "*1": 1, "*2": 0.5, "*3": 0.1 };
+const CYP2C19 = { "*1": 1, "*2": 0, "*3": 0, "*17": 1.5 };
+const TPMT = { "*1": 1, "*3A": 0, "*3C": 0 };
+
+function inferPhenotype(gene: string, diplotype: string): Phenotype {
+  const g = gene.toUpperCase();
+
+  if (g === "CYP2D6") return phenotypeFromScore(scoreDiplotype(diplotype, CYP2D6));
+  if (g === "CYP2C9") return phenotypeFromScore(scoreDiplotype(diplotype, CYP2C9));
+  if (g === "CYP2C19") return phenotypeFromScore(scoreDiplotype(diplotype, CYP2C19));
+  if (g === "TPMT") return phenotypeFromScore(scoreDiplotype(diplotype, TPMT));
+
+  if (g === "SLCO1B1") {
+    if (diplotype.includes("*5") || diplotype.includes("*15")) return "IM";
+    return "NM";
+  }
+
+  if (g === "DPYD") {
+    if (diplotype.includes("*2A") || diplotype.includes("*13")) return "PM";
+    return "NM";
+  }
+
+  return "Unknown";
+}
 import {
   VCFVariant,
   DetectedVariant,
