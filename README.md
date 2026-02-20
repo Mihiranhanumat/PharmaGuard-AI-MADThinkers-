@@ -15,7 +15,7 @@ PharmaGuard X analyzes patient genomic variants from VCF files and predicts drug
 
 ## 🎥 LinkedIn Demo Video 
 
-👉 [https://www.linkedin.com/your-demo-video-link](https://www.linkedin.com/your-demo-video-link)
+👉 [https://www.linkedin.com/posts/dharna-sharma-bb8189322_rift2026-madthinkers-hackathon-activity-7430417955944812544-tu5G?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAFGKN3wBvDpLoai1OUDqCk3vLInRuRLaVA4&utm_campaign=copy_link](https://www.linkedin.com/posts/dharna-sharma-bb8189322_rift2026-madthinkers-hackathon-activity-7430417955944812544-tu5G?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAFGKN3wBvDpLoai1OUDqCk3vLInRuRLaVA4&utm_campaign=copy_link)
 
 ---
 
